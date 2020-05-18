@@ -2,11 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Group;
+use App\Image;
 use Faker\Generator as Faker;
 
-$factory->define(Group::class, function (Faker $faker) {
+$factory->define(Image::class, function (Faker $faker) {
     return [
-        'name' => $faker->word(),
+        'url' => $faker->imageUrl(1024, 1024)
     ];
 });

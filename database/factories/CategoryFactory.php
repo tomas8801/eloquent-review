@@ -2,11 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Group;
+use App\Category;
 use Faker\Generator as Faker;
 
-$factory->define(Group::class, function (Faker $faker) {
+$factory->define(Category::class, function (Faker $faker) {
     return [
-        'name' => $faker->word(),
+        'name' => $faker->word()
     ];
 });

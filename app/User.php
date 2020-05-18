@@ -38,14 +38,43 @@ class User extends Authenticatable
     ];
 
     public function profile(){
+        // un User tiene un Profile
         return $this->hasOne(Profile::class);
     }
 
+
     public function level(){
-        return $this->hasMany(Level::class);
+        // un User pertenece a un Level
+        return $this->belongsTo(Level::class);
     }
 
     public function groups(){
+        // un User pertenece y tiene muchos Groups
         return $this->belongsToMany(Group::class)->withTimestamps();
+    }
+
+    public function location(){
+        // un User tiene una Location a traves de Profile
+        return $this->hasOneThrough(Location::class, Profile::class);
+    }
+
+    public function posts(){
+        // un User tiene muchos Posts
+        return $this->hasMany(Post::class);
+    }
+
+    public function videos(){
+        // un User tiene muchos Videos
+        return $this->hasMany(Video::class);
+    }
+
+    public function comments(){
+        // un User tiene muchos Comments
+        return $this->hasMany(Comment::class);
+    }
+
+    public function image(){
+        // un User tiene una Image
+        return $this->morphOne(Image::class, 'imageable');
     }
 }
