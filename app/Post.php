@@ -29,7 +29,7 @@ class Post extends Model
 
     public function tags(){
         // relacion polimorfica un Post tiene muchos Tags
-        return $this->morphMany(Tag::class, 'taggable');
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 }
 

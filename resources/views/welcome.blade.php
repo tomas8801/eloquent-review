@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -73,7 +75,7 @@
 
                 <div class="links">
                     @foreach ($users as $user)
-                        <a href="#">{{$user->name}}</a>
+                        <a href="{{route('user.profile', $user->id)}}">{{$user->name}}</a>
                     @endforeach
 
                 </div>
